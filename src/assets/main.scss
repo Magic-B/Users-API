@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+@import 'variables.scss';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+}
+
+body {
+    min-height: 100vh;
+    background: $bg;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: $text;
+    transition: color 0.5s, background-color 0.5s;
+    text-rendering: optimizeLegibility;
+}
+
+.container {
+    max-width: $desktop;
+    height: 100%;
+    margin: 0 auto;
+    padding: 55px 50px;
+}
+
+@media (max-width: $mobile) {
+    .container {
+        padding: 30px 20px;
+    }
+}
+
+.title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    color: $text;
+}
+
+.subtitle {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    color: $text;
+}
+
+.flex {
+    display: flex;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+.around {
+    justify-content: space-around;
+}
+
+.wrap {
+    flex-flow: wrap;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.mt-sm {
+    margin-top: 5px;
+}
+
+.mt-lg {
+    margin-top: 10px;
+}
+
+.mt-xl {
+    margin-top: 15px;
+}
+
+.mr-xl {
+    margin-right: 15px;
+}

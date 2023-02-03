@@ -1,9 +1,9 @@
 <template lang='pug'>
 .card.flex.column.justify-center
-  .name {{ info.name }}
+  .subtitle {{ info.name }}
   .user-name.mt-sm @{{ info.username }}
-  .text.mt-lg {{ info.email }}
-  .text.mt-sm {{ info.phone }}
+  .mt-xl {{ info.email }}
+  .mt-sm {{ info.phone }}
 </template>
 
 <script lang='ts'>
@@ -24,20 +24,15 @@ export default defineComponent({
 <style lang="scss" scoped>
 .card {
   cursor: pointer;
-  width: 380px;
+  width: 100%;
   height: 160px;
   padding: 0 25px;
+  color: #444444;
 
   background: #FFFFFF;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 
-  .name {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-  }
   .user-name {
-    font-style: normal;
     font-weight: 400;
     font-size: 12px;
   }

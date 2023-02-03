@@ -1,11 +1,11 @@
 <template lang='pug'>
 .container
   AppLoader(v-if='loading' big-loader loader-color-black)
-  template(v-if='!loading && users')
-    div.flex.between.items-center
+  template(v-else)
+    div.flex.between.items-center.full-width
       .title Users
       AppButton(@click='goToCreateView') Create User
-    div.users-list.grid(v-if='users' )
+    div.grid(v-if='users' )
       AppCard(v-for='user in users' :key='user.email' :info='user' @click='goToUserView(user.id)')
 </template>
 
@@ -24,7 +24,7 @@ export default defineComponent({
     AppButton, AppCard, AppLoader
   },
   setup () {
-    const users = ref<null | IUsers>(null)
+    const users = ref<IUsers>({} as IUsers)
     const router = useRouter()
     const loading = ref(true)
     const { notify } = useNotification()
@@ -44,7 +44,7 @@ export default defineComponent({
       } catch (err) {
         if (err instanceof Error) {
           notify({
-            title: `${err.message}`,
+            title: err.message,
             type: 'error',
             duration: 1000,
             speed: 1000
@@ -68,7 +68,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px 20px;
   margin-top: 50px;
 }

@@ -1,7 +1,7 @@
 <template lang='pug'>
 button.btn(type='submit')
   slot(v-if='!loading') click
-  AppLoader(v-if='loading')
+  AppLoader(v-else)
 </template>
 
 <script>

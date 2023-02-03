@@ -1,26 +1,26 @@
 <template lang='pug'>
 .container
   AppLoader(v-if='loading' big-loader loader-color-black)
-  template(v-if='!loading && user')
+  template(v-else)
     .flex
       .title.mr-xl {{ user.name }}
-      .text @{{ user.username }}
+      div @{{ user.username }}
     .grid
       div
         .subtitle Email
-        div {{ user.email }}
+        .mt-lg {{ user.email }}
       div
         .subtitle Phone
-        div {{ user.phone }}
+        .mt-lg {{ user.phone }}
       div
         .subtitle Website
-        div {{ user.website }}
+        .mt-lg {{ user.website }}
       div
         .subtitle Company
-        div {{ user.company.name }}
+        .mt-lg {{ user.company.name }}
       div
         .subtitle Address
-        div {{ user.address.suite }} {{ user.address.street }}, {{ user.address.city }}, {{ user.address.zipcode }}
+        .mt-lg {{ user.address.suite }} {{ user.address.street }}, {{ user.address.city }}, {{ user.address.zipcode }}
 </template>
 
 <script lang='ts'>
@@ -42,7 +42,7 @@ export default defineComponent({
   },
   setup (props) {
     const { id } = toRefs(props)
-    const user = ref<null | IUser>(null)
+    const user = ref<IUser>({} as IUser)
     const loading = ref(true)
     const { notify } = useNotification()
 
@@ -53,7 +53,7 @@ export default defineComponent({
       } catch (err) {
         if (err instanceof Error) {
           notify({
-            title: `${err.message}`,
+            title: err.message,
             type: 'error',
             duration: 1000,
             speed: 1000
@@ -75,10 +75,19 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/variables.scss";
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px 20px;
   margin-top: 50px;
+}
+
+@media (max-width: $mobile) {
+  .flex {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
 </style>

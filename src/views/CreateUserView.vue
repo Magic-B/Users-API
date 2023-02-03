@@ -21,21 +21,9 @@ export default defineComponent({
     const loading = ref(false)
     const { notify } = useNotification()
     const form = ref<IUser>({
-      name: '',
-      username: '',
-      email: '',
-      phone: '',
-      website: '',
-      company: {
-        name: ''
-      },
-      address: {
-        city: '',
-        street: '',
-        suite: '',
-        zipcode: ''
-      }
-    })
+      company: {},
+      address: {}
+    } as IUser)
 
     const onSubmit = async (formValue: IUser): Promise<void> => {
       console.log('hello world')
@@ -54,7 +42,7 @@ export default defineComponent({
       } catch (err) {
         if (err instanceof Error) {
           notify({
-            title: `${err.message}`,
+            title: err.message,
             type: 'error',
             duration: 1000,
             speed: 1000
@@ -68,8 +56,7 @@ export default defineComponent({
     return {
       form,
       loading,
-      onSubmit,
-      alert
+      onSubmit
     }
   }
 })
