@@ -1,46 +1,42 @@
-# users-list
+<div align="center">
 
-This template should help get you started developing with Vue 3 in Vite.
+# UsersApi
 
-## Recommended IDE Setup
+✨ Interaction with user data ✨
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+</div>
 
-## Type Support for `.vue` Imports in TS
+</br>
+<div align="center">
+  <img width="auto" src="demo/demo.png" />
+</div>
+</br>
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## About UsersApi 📰
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+The UersApi repository serves as an exemplary solution for illustrating user data management concepts. It showcases the implementation of user creation, display, and validation functionalities, as well as the adaptability to different screens. While not intended for production use, this repository provides a solid foundation for understanding and implementing similar features in your own applications. By examining the code and structure of the UersApi repository, developers can gain insights into best practices and patterns for managing user data effectively.
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+### Installation and startup stages
+```
 npm install
 ```
-
-### Compile and Hot-Reload for Development
-
-```sh
+```
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+### Additional commands
+```
 npm run build
 ```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
+```
 npm run lint
 ```
+
+
+### Deployment
+This application can be used on Vercel - users-api-tau.vercel.app
+
+### License
+This project uses the MIT License, which is an open-source license that allows for the use, copy, modification, merge, publish, distribute, and sell copies of the software and/or modified versions. The license also provides no warranties and a disclaimer of liability from the authors of the software.
+
+For more detailed information about the MIT License, please refer to the LICENSE file, which is located in the root of this project.

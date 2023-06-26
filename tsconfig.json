@@ -6,6 +6,7 @@
     "importsNotUsedAsValues": "remove",
     "isolatedModules": false,
     "baseUrl": ".",
+    "allowJs": true,
     "paths": {
       "@/*": ["./src/*"]
     }
